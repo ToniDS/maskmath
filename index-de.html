@@ -126,42 +126,41 @@
     <h2>Warum Masken uns doppelt schützen</h2>
 
     <p>
-      Let’s imagine that a contagious person wears a 50 percent effective mask.
-      By '50 percent effective', I mean that wearing this mask cuts in half the chance that they'll infect a nearby susceptible person.
+      Stellen wir uns vor, eine ansteckende Person trage eine Maske, die 50 Prozent effektiv ist. "50 Prozent effektiv" bedeutet, dass die Maske die Wahrscheinlichkeit, eine anfällige Person in der Näge anzustecken, um die Hälfte reduziert.
     </p>
 
   </div>
 
-  <anim-with-caption :mask1="true" :mask2="false" :eout="0.5" contagiousperson="Contagious Person" susceptibleperson="Susceptible Person"><span class="orange">Transmission Route 2:</span> When the contagious person wears a 50% effective mask, disease transmission drops by 50%.</anim-with-caption>
+  <anim-with-caption :mask1="true" :mask2="false" :eout="0.5" contagiousperson="Ansteckende Person" susceptibleperson="Anfällige Person"><span class="orange">Übertragungsweg 2:</span> Wenn die ansteckende Person eine 50% effektive Maske trägt, sinkt die Ansteckungsrate um 50%.</anim-with-caption>
 
   <div class="container">
 
-    <p>But what if the susceptible person wears the mask instead?</p>
+    <p>Aber was ist, wenn stattdessen die anfällige Person die Maske trägt?</p>
 
     <p>
-      In general, the effectiveness of a mask depends on whether you’re <b>inhaling</b> or <b>exhaling</b> through it.
-      For now, let’s keep things simple and assume that this mask is equally effective in either direction.
+    Generell hält die Wirksamkeit einer Maske davon ab, ob man durch sie <b>einatmet</b> oder <b>ausatmet</b>.
+    Für den Augenblick gehen wir davon aus, dass diese Maske in beide Richtungen gleich wirksam ist. 
     </p>
 
-    <p>In that case, the chance of infection in this route also drops by 50%.</p>
+    <p>In diesem Fall sinkt die Ansteckungswahrscheinlichkeit über diesen Weg auch um 50%.</p>
 
   </div>
 
-  <anim-with-caption :mask1="false" :mask2="true" :ein="0.5" contagiousperson="Contagious Person" susceptibleperson="Susceptible Person"><span class="orange">Transmission Route 3:</span> When the susceptible person wears a 50% effective mask, disease transmission drops by 50%.</anim-with-caption>
+  <anim-with-caption :mask1="false" :mask2="true" :ein="0.5" contagiousperson="Ansteckende Person" susceptibleperson="Anfällige Person"><span class="orange">Übertragungsweg 3:</span> Wenn die anfällige Person eine 50% effektive Maske trägt, sinkt die Ansteckungsrate um 50%.</anim-with-caption>
   
   <div class="container">
 
-    <p>What if both the contagious <i>and</i> the susceptible person wear a mask?</p> 
+    <p>Was passiert, wenn die ansteckende <i> und </i> die anfällige Person eine Maske trägt?</p> 
 
     <p>
-      Well, the first mask cuts the chance of infection in half, and the second mask once again cuts the chance of infection in half.
-      So when <i>both</i> people wear masks, the chance of infection is half of half, i.e. 25% (as compared to when neither wear masks).
-      That's a 75% drop in the chance of infection.
+      Die erste Maske reduziert die Ansteckungswahrscheinlichkeit um die Hälfte, und die zweite Maske auch. 
+      Wenn also <i> beide </i> Menschen eine Maske tragen, ist die Ansteckungswahrscheinlichkeit die Hälfte von 50%, also 25% (verglichen damit, wenn keiner eine Maske trägt).
+      Das ist eine Reduktion der Infektionswahrscheinlichkeit um 75%.
     </p>
 
   </div>
 
-  <anim-with-caption :mask1="true" :mask2="true" :eout="0.5" :ein="0.5" contagiousperson="Contagious Person" susceptibleperson="Susceptible Person"><span class="yellow">Transmission Route 4:</span> When both people wear 50% effective masks, disease transmission drops by 75%.</anim-with-caption>
+  <anim-with-caption :mask1="true" :mask2="true" :eout="0.5" :ein="0.5" contagiousperson="Ansteckende Person" susceptibleperson="Anfällige Person"><span class="yellow">Übertragungsweg 4:</span> Wenn beide Menschen eine 50% effektive Maske tragen, sinkt die Ansteckungsrate um 75%.</anim-with-caption>
   
   <div class="container">
 
@@ -181,7 +180,7 @@
       <div class="row big-small">
 
         <div class="column onehundredpx">
-          <div class="center">Disease Transmission Route</div>
+          <div class="center">Disease Übertragungsweg</div>
           <anim :mask1="false" :mask2="false"></anim>
           <anim :mask1="true" :mask2="false" :eout="0.5"></anim>
           <anim :mask1="false" :mask2="true" :ein="0.5"></anim>
@@ -269,11 +268,11 @@
 
   <div class="graphic">
     <div class="graphic-container">
-
+People
       <div class="row big-small-small">
 
         <div class="column onehundredpx">
-          <div class="center">Disease Transmission Route</div>
+          <div class="center">Disease Übertragungsweg</div>
           <anim :mask1="false" :mask2="false"></anim>
           <anim :mask1="true" :mask2="false" :eout="0.5"></anim>
           <anim :mask1="false" :mask2="true" :ein="0.5"></anim>
@@ -293,7 +292,7 @@
           <div class="center">25%</div>
           <div class="center">25%</div>
           <div class="center">25%</div>
-          <div class="center">25%</div>
+          <div class="center">25%</div>People
         </div>
 
       </div>
@@ -378,7 +377,7 @@
       <div class="row big-small-small padabove">
 
         <div class="column onehundredpx">
-          <div class="center">Disease Transmission Route</div>
+          <div class="center">Krankheitsübertragungsweg</div>
           <anim :mask1="false" :mask2="false"></anim>
           <anim :mask1="true" :mask2="false" :eout="eout"></anim>
           <anim :mask1="false" :mask2="true" :ein="ein"></anim>
@@ -526,7 +525,7 @@
       <graph :traces="graph2Traces" :layout="graph2Layout(
         'How Masks Reduce R0',
         'Percentage of People Who Wear Masks',
-        '# People a Contagious Person Infects (R0)',
+        '# People a Ansteckende Person Infects (R0)',
         'Epidemic Under Control',
         'Epidemic Out Of Control'
       )" :config="config"></graph>
