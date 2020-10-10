@@ -165,12 +165,12 @@
   <div class="container">
 
     <p>
-    Es mag überraschen, dass eine 50% wirksame Maske das Infektionsrisiko um 75% senkt. 
+    Es mag überraschen, dass eine 50% wirksame maske das Infektionsrisiko um 75% senkt. 
     Wenn beide Menschen eine make tragen, wird die Infektionswahrscheinlichkeit zwei Mal halbiert.
     Dieser <b> doppelte Schutz </b> macht Masken deutlich effektiver als intuitiv erwartet.
     </p>
 
-    <p>Hier sind alle fier Wege, wie eine aerogene Krankheit sich von Person zu Person ausbreiten kann. </p>
+    <p>Hier sind also die vier Wege, über die sich eine aerogene Krankheit von Mensch zu Mensch ausbreiten kann.</p>
 
   </div>
 
@@ -180,7 +180,7 @@
       <div class="row big-small">
 
         <div class="column onehundredpx">
-          <div class="center">Disease Übertragungsweg</div>
+          <div class="center">Übertragungsweg der Krankheit</div>
           <anim :mask1="false" :mask2="false"></anim>
           <anim :mask1="true" :mask2="false" :eout="0.5"></anim>
           <anim :mask1="false" :mask2="true" :ein="0.5"></anim>
@@ -188,7 +188,7 @@
         </div>
 
         <div class="column onehundredpx">
-          <div class="center">Drop in Disease Transmission</div>
+          <div class="center">Reduktion in Krankheitsausbreitung</div>
           <div class="center"><span class="red">0%</span></div>
           <div class="center"><span class="orange">50%</span></div>
           <div class="center"><span class="orange">50%</span></div>
@@ -198,7 +198,7 @@
       </div>
 
       <div class="caption">
-        Vier Wege, wie COVID-19 sich von einer Person zur nächsten ausbreiten kann. This assumes a 50% effective mask.
+        Vier Wege, wie COVID-19 sich von einer Person zur nächsten ausbreiten kann, wenn die Maske 50% wirksam ist.
       </div>
 
     </div>
@@ -210,58 +210,57 @@
     <h2>From People to The Population</h2>
 
     <p>
-      So far, we've only looked at disease transmission between two people.
-      How do we go from here to understanding disease transmission in the <i>entire population</i>?
+      Bisher haben wir uns nur mit Übertraging zwischen zwei Menschen beschäftigt. 
+      Wie kommen wir von hier zu einem Verständnis der <i>gesamten Bevölkerung</i>?
     </p> 
 
-    <p>Well, in the extreme limits, this is straightforward.</p> 
+    <p>An den Extremen ist das ziemlich einfach.</p> 
 
     <p>
-      For example, if <b>nobody</b> wore a mask, then whenever two people meet, the chance that <span class="red">neither wear a mask</span> is 100%.
+    Zum Beispiel, wenn <b>niemand</b> eine Maske trug, dann ist die Wahrscheinlichkeit, dass <span class="red">keiner on zwei Personen</span> bei einem Treffen eine Maske trägt, 100%.
     </p>
 
     <network :maskusage="0"></network>
 
     <p>
-      So we'd only have to consider the <span class="red">first route</span> of disease transmission, and the population would see <span class="red">no drop</span> in disease transmission.
+    Daher müssten wir nur den <span class="red">ersten Weg</span> der Krankheitsübertragung betrachten, und die Bevölkerung würde <span class="red">keine Reduktion</span> der Infektionswahrscheinlichkeit erleben.
     </p>
 
     <p>
-      At the other extreme, if <b>everyone</b> wore a mask, then whenever two people meet, the chance that they <span class="yellow">both wear masks</span> is 100%.
+    Am anderen Extrem, wenn <b>jede:r</b> eine Maske tragen würde, dann wäre, wenn sich zwei Menschen treffen, die Wahrscheinlichkeit, dass <span class="yellow">beide eine Maske tragen</span>, 100%.
     </p>
 
     <network :maskusage="1"></network>
 
     <p>
-      In this case, we’d only have to consider the <span class="yellow">last route</span> of disease transmission.
-      Assuming masks are 50% effective in each direction, the population would see a <span class="yellow">75% drop</span> in disease transmission.
+      In diesem Fall müssten wir uns nur den <span class="yellow">letzten Übertragungsweg</span> anschauen. 
+      Davon ausgehend, dass Masken in jede Richtung 50% wirksam sind, würde die Infektionswahrscheinlichkeit in der Gesamtbevölkerung <span class="yellow">um 75% abnehmen</span>.
     </p>
 
     <p>
-      So when <i>everyone</i> wears a mask (or when <i>no one</i> wears one), it's straightforward to calculate the drop in disease transmission in the population, because there's only one route involved.
+    Das bedeutet, wenn <i>jede:r</i> eine Maske trägt (oder wenn <i>niemand</i> eine trägt), ist es trivial, die Reduktion der Infektionswahrscheinlichkeit in der Bevölkerung zu berechnen, weil nur ein Übertragungsweg involviert ist.
     </p>
 
     <p>
-      But in reality, some people wear masks and others don’t.
-      Which means the virus can spread through a mix of all four routes.
-      How likely each route is will depend on how many people wear masks.
+    Aber in Wirklichkeit tragen manche Menschen eine Maske, und andere nicht. 
+    Der Virus kann sich also über alle vier Wege ausbreiten. 
+    Wie wahrscheinlich jeder Übertragungsweg ist, hängt davon ab, wie viele Menschen eine Maske tragen.
     </p>
 
     <label class="row half bigsplash">
-      <div>Mask Usage: <span class="dotted">{{convertToPercent(pnetwork)}}</span>%</div>
+      <div>Maskennutzung: <span class="dotted">{{convertToPercent(pnetwork)}}</span>%</div>
       <slider v-model="pnetwork" :min="0" :max="1" :step="0.01"></slider>
     </label>
 
     <network :maskusage="pnetwork"></network>
 
     <p>
-      For example, <b>if 50% of people wear masks</b>, then whenever two people meet at random, the chance that <span class="yellow">both people wear masks</span> is 50% ⨉ 50%, i.e. 25%.
-      Similarly, you can work out the chance of the other three disease transmission routes.
+    Zum Beispiel, wenn <b>50% der Menschen</b> eine Maske tragen, dann ist die Wahrscheinlichkeit bei einem Treffen zu zweit, dass <span class="yellow">beide eine Maske tragen</span> 50% x 50%, also 25%.
+    Analog kann man auch die Wahrscheinlichkeit für die anderen Übertragungswege ausrechnen.
     </p>
 
     <p>
-      When exactly half the population wears masks, it turns out that each route is equally likely.
-      (Can you convince yourself why this has to be true?)
+      Es stellt sich heraus, dass jeder Übertragungsweg gleich wahrscheinlich ist, wenn genau die Hälfte der Bevölkerung eine Maske trägt. (Kannst du dich selbst davon überzeigen, warum das so ist?)
     </p>
 
   </div>
@@ -272,7 +271,7 @@ People
       <div class="row big-small-small">
 
         <div class="column onehundredpx">
-          <div class="center">Disease Übertragungsweg</div>
+          <div class="center">Übertragungsweg der Krankheit</div>
           <anim :mask1="false" :mask2="false"></anim>
           <anim :mask1="true" :mask2="false" :eout="0.5"></anim>
           <anim :mask1="false" :mask2="true" :ein="0.5"></anim>
@@ -280,7 +279,7 @@ People
         </div>
 
         <div class="column onehundredpx">
-          <div class="center">Drop in Disease Transmission</div>
+          <div class="center">Reduktion in Krankheitsausbreitung</div>
           <div class="center"><span class="red">0%</span></div>
           <div class="center"><span class="orange">50%</span></div>
           <div class="center"><span class="orange">50%</span></div>
@@ -288,17 +287,17 @@ People
         </div>
 
         <div class="column onehundredpx">
-          <div class="center">Chance of This Route</div>
+          <div class="center">Wahrscheinlichkeit dieses Übertragungswegs</div>
           <div class="center">25%</div>
           <div class="center">25%</div>
           <div class="center">25%</div>
-          <div class="center">25%</div>People
+          <div class="center">25%</div>Menschen
         </div>
 
       </div>
 
       <div class="caption">
-        The four ways that COVID-19 can spread from person to person, assuming that 50% of people wear a 50% effective mask.
+        Die vier Wege, wie COVID-19 sich von Mensch zu Mensch ausbreiten kann, wenn 50% der Menschen eine 50% wirksame Maske tragen. 
       </div>
 
     </div>
@@ -307,7 +306,7 @@ People
   <div class="container">
 
     <p>
-      We can now calculate the <b>average drop in disease transmission in the population</b>.
+    Wir können jetzt die <b>Durchschnittsreduktion der Krankheitsausbreitung in der Bevölkerung</b> berechnen.
       Since we’ve set things up so that each route is equally likely, this is just the average of <span class="red">0%</span>, <span class="orange">50%</span>, <span class="orange">50%</span> and <span class="yellow">75%</span>, which is 43.75%.
     </p>
 
